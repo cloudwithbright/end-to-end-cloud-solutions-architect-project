@@ -1,0 +1,24 @@
+name: LMS Terraform Infrastructure CICD 
+on:
+  push:
+    branches:
+      - dev
+      - stage
+      - prod
+      - uat
+      - preprod
+  workflow_dispatch:
+    inputs:
+      Environment:
+        type: choice
+        default: dev
+        description: Select environment to run pipeline
+        options:
+          - dev
+          - stage
+          - prod
+          - uat
+          - preprod
+jobs:
+  Development:
+    runs-on: ubuntu-latest
