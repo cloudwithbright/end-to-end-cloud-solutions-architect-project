@@ -22,3 +22,7 @@ on:
 jobs:
   Development:
     runs-on: ubuntu-latest
+    steps:
+      - id: CheckoutRepository
+        name: Checkout Repository
+        uses: actions/checkout@v4
